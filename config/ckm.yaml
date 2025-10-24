@@ -1,0 +1,13 @@
+## CKM parameter flat priors (UTfit 2022 central ranges)
+#ckm_priors:
+#  lambda: {min: 0.2255, max: 0.2275}
+#  A:      {min: 0.76,   max: 0.82}
+#  rhobar: {min: 0.11,   max: 0.17}
+#  etabar: {min: 0.33,   max: 0.38}
+
+# CKM parameters with Gaussian priors (UTfit 2022)
+ckm_priors:
+  lambda: {mean: 0.22650, sigma: 0.00050}
+  A:      {mean: 0.790,   sigma: 0.020}
+  rhobar: {mean: 0.145,   sigma: 0.015}
+  etabar: {mean: 0.343,   sigma: 0.013}
