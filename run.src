@@ -1,0 +1,1 @@
+python run_fit.py --observables data/observables.yaml -N 1000

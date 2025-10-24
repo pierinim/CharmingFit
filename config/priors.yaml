@@ -1,0 +1,72 @@
+# Priors for charmless two-body B decays
+# -------------------------------------
+# These specify how each physical parameter is sampled.
+# The code in priors/generate_point.py reads these ranges.
+
+ckm:
+  # Flat priors over UTfit 2022 ranges (arXiv:2212.03894)
+  lambda:
+    dist: uniform
+    min: 0.2255
+    max: 0.2275
+  A:
+    dist: uniform
+    min: 0.76
+    max: 0.82
+  rhobar:
+    dist: uniform
+    min: 0.11
+    max: 0.17
+  etabar:
+    dist: uniform
+    min: 0.33
+    max: 0.38
+
+mixing:
+  # Phases for time-dependent CP violation
+  beta:
+    dist: uniform
+    min: 0.0
+    max: 1.2        # radians
+  beta_s:
+    dist: uniform
+    min: -0.3
+    max: 0.3        # radians
+
+hadronic:
+  # Reference amplitude magnitudes in arbitrary units.
+  # Each amplitude is drawn as:  X = T0 * U(0, 2)
+  # where T0 = sqrt(BR(pi+pi-)) / |lambda_u^(d)|
+  T:  {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+  C:  {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+  E:  {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+  A:  {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+  P:  {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+  PA: {dist: scaled_uniform, scale: T0, min: 0.0, max: 2.0}
+
+su3_breaking:
+  # SU(3)-breaking complex factors in polar form: magnitude * exp(i*phase)
+  # Magnitudes are Gaussian around 1; phases uniform in [-π, π].
+  magnitude:
+    dist: normal
+    mean: 1.0
+    sigma: 0.3
+  phase:
+    dist: uniform
+    min: -3.141592653589793
+    max:  3.141592653589793
+
+norm:
+  # Overall normalizations for branching ratios; fixed to 1 unless floated.
+  N_B0: {value: 1.0}
+  N_Bp: {value: 1.0}
+  N_Bs: {value: 1.0}
+
+meta:
+  # Metadata: provenance and version tracking
+  version: 1.0
+  source: "UTfit 2022 (arXiv:2212.03894)"
+  notes: >
+    CKM parameters are drawn uniformly in the UTfit 2022 allowed ranges.
+    Hadronic amplitudes are scaled by T0 = sqrt(BR(B0->pi+pi-)) / |λ_u^(d)|.
+    SU(3)-breaking parameters are O(1) complex factors with 30% Gaussian spread.
