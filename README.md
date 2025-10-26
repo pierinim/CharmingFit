@@ -1,7 +1,7 @@
 # CharmingFit — UTfit-style Bayesian analysis for charmless two-body B decays
 
 <p align="center">
-  <img src="logo/logo_white.png" width="300" alt="CharmingFit Logo">
+  <img src="logo/logo_white.png" width="600" alt="CharmingFit Logo">
 </p>
 
 This package performs a Bayesian (Monte Carlo importance-sampling) fit of
