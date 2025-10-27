@@ -1,0 +1,18 @@
+# charmingfit.sub — Condor job description for CharmingFit
+universe        = vanilla
+executable      = $PWD/script/job.sh
+arguments       = $(ProcId)
+
+# Logs go to /afs (never to EOS!)
+log             = $PWD/charmingfit_logs/job_$(ProcId).log
+output          = $PWD/charmingfit_logs/job_$(ProcId).out
+error           = $PWD/charmingfit_logs/job_$(ProcId).err
+
+# Typical job duration (up to 8 hours)
++JobFlavour     = "workday"
+
+# No file transfer: code is on EOS, we only use xrdcp
+should_transfer_files = NO
+
+# Queue 10,000 jobs
+queue 10000
