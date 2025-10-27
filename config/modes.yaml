@@ -3,22 +3,24 @@
 # and whether it is affected by time-dependent CP mixing.
 
 modes:
-  # --- B0 decays ---
-  B0_pi+pi-:   {meson: B0, has_mixing: true}
-  B0_pi0pi0:   {meson: B0, has_mixing: true}
-  B0_K+pi-:    {meson: B0, has_mixing: true}
-  B0_K0pi0:    {meson: B0, has_mixing: true}
-  B0_K0K0bar:  {meson: B0, has_mixing: true}
-  B0_K+K-:     {meson: B0, has_mixing: true}
+  # ---------- B0 → ππ ----------
+  B0_pi+pi-:   {meson: B0, has_mixing: true,  cp_eigen: +1}
+  B0_pi0pi0:   {meson: B0, has_mixing: true,  cp_eigen: +1}
+  B+_pi+pi0:   {meson: B+, has_mixing: false}
 
-  # --- B+ decays (no mixing) ---
-  B+_pi+pi0:    {meson: B+, has_mixing: false}
-  B+_K+pi0:     {meson: B+, has_mixing: false}
-  B+_K0barpi+:  {meson: B+, has_mixing: false}
-  B+_K0K+:      {meson: B+, has_mixing: false}
+  # ---------- B0 → Kπ ----------
+  B0_K+pi-:    {meson: B0, has_mixing: false}
+  B+_K+pi0:    {meson: B+, has_mixing: false}
+  B+_K0barpi+: {meson: B+, has_mixing: false}
+  B0_K0pi0:    {meson: B0, has_mixing: true,   cp_eigen: -1}  # K_S π0 in experiment
 
-  # --- Bs decays ---
-  Bs_K+K-:      {meson: Bs, has_mixing: true}
-  Bs_K0K0bar:   {meson: Bs, has_mixing: true}
-  Bs_K-pi+:     {meson: Bs, has_mixing: false}
-  Bs_K0pi0:     {meson: Bs, has_mixing: true}
+  # ---------- B0 → KK ----------
+  B0_K0K0bar:  {meson: B0, has_mixing: true,   cp_eigen: +1}  # K_S K_S final state
+  B0_K+K-:     {meson: B0, has_mixing: false}
+  B+_K0K+:     {meson: B+, has_mixing: false}
+
+  # ---------- Bs → KK and Kπ ----------
+  Bs_K+K-:     {meson: Bs, has_mixing: true,   cp_eigen: +1}  # CP-even
+  Bs_K0K0bar:  {meson: Bs, has_mixing: true,   cp_eigen: +1}  # K_S K_S
+  Bs_K-pi+:    {meson: Bs, has_mixing: false}
+  Bs_K0pi0:    {meson: Bs, has_mixing: true,   cp_eigen: -1}  # K_S π0 (CP-odd)

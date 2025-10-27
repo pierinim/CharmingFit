@@ -19,7 +19,7 @@ observables:
 
   - {mode: B0_K0pi0,   type: BR,   value: 10.1e-6,  sigma: 0.43e-6}
   - {mode: B0_K0pi0,   type: ACP,  value: -0.10,    sigma: 0.13}
-  - {mode: B0_K0pi0,   type: S,    value: 0.64,     sigma: 0.13}
+  - {mode: B0_K0pi0,   type: S,    value: -0.64,     sigma: 0.13}  
 
   - {mode: B+_K+pi0,   type: BR,   value: 13.22e-6, sigma: 0.43e-6}
   - {mode: B+_K+pi0,   type: ACP,  value: 0.027,    sigma: 0.012}

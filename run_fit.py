@@ -6,8 +6,8 @@ from pathlib import Path
 
 from fitio.load_inputs import load_all_configs
 from fitio.write_root import write_root
-
 from amplitudes.builder import build_amplitudes
+
 
 # ----------------- Utility functions -----------------
 def exp_i(phi): return cmath.cos(phi) + 1j * cmath.sin(phi)
@@ -159,10 +159,18 @@ def predict_all(theta, obs_rows, mode_map):
         if typ == "BR":
             pred[(mode, "BR")] = br_from_amp(A[mode], meson, N_B0, N_Bp, N_Bs)
         elif typ == "ACP":
-            pred[(mode, "ACP")] = direct_acp(A[mode], Abar[mode])
+            acp = direct_acp(A[mode], Abar[mode])
+            # Flip sign for CP eigenstates (to match experimental convention)
+            eta_f = mode_map[mode].get("cp_eigen", 1.0)
+            if eta_f != 1.0 and mode_map[mode].get("has_mixing", False):
+                acp *= -eta_f
+            pred[(mode, "ACP")] = acp
         elif typ == "S":
             qop = q_over_p(meson, beta, beta_s)
             lam = lambdaf(qop, Abar[mode], A[mode])
+            # Apply CP eigenvalue for modes measured as CP eigenstates (e.g., K_S π0)
+            eta = mode_map[mode].get("cp_eigen", 1.0)
+            lam *= eta
             S, C = S_C_from_lambda(lam)
             pred[(mode, "S")] = S
             pred[(mode, "C")] = C
@@ -191,6 +199,21 @@ def main():
     pred_keys = sorted(set((r["mode"], r["type"]) for r in obs))
     pred_names = {k: f"pred__{k[0]}__{k[1]}".replace("+","p").replace("-","m") for k in pred_keys}
     for name in pred_names.values(): buf[name] = []
+
+    # Hadronic topologies
+    for k in ["T","C","E","A","P","PA"]:
+        buf[f"{k}_abs"] = []
+        buf[f"{k}_phase"] = []
+
+    # SU(3)-breaking factors
+    for fam, keys in zip(["pi","kappa","rho","sigma"],
+                         [["T","C","E","A","P","PA"],
+                          ["P","A","E","PA"],
+                          ["P","T","C"],
+                          ["T","E","P","PA"]]):
+        for k in keys:
+            buf[f"{fam}_{k}_abs"] = []
+            buf[f"{fam}_{k}_phase"] = []
 
     N_B0 = N_Bp = N_Bs = 1.0
 
@@ -224,13 +247,34 @@ def main():
         for k, name in pred_names.items():
             buf[name].append(pred.get(k, float("nan")))
 
+        # Hadronic topologies normalized by T
+        Tref = theta["hadronic"]["T"]
+        for k in ["T","C","E","A","P","PA"]:
+            amp = theta["hadronic"][k] / Tref
+            buf[f"{k}_abs"].append(abs(amp))
+            buf[f"{k}_phase"].append(np.angle(amp))
+
+        # SU(3)-breaking factors
+        for fam, block in zip(["pi","kappa","rho","sigma"],
+                              [theta["pi"], theta["kappa"], theta["rho"], theta["sigma"]]):
+            for kk in [x[:-4] for x in block.keys() if x.endswith("_abs")]:
+                buf[f"{fam}_{kk}_abs"].append(block[f"{kk}_abs"])
+                buf[f"{fam}_{kk}_phase"].append(block[f"{kk}_phase"])
+
     write_root(args.output, buf)
 
-    w = np.array(buf["weight"])
-    ess = (w.sum()**2) / (w*w).sum()
+    # Compute in log-space to avoid underflow
+    logw = np.array(buf["logL"])
+    logw -= np.max(logw)             # rescale for numerical stability
+    w = np.exp(logw)
+    ess = (w.sum()**2) / (w*w).sum() if np.isfinite(w).all() and w.sum() > 0 else float("nan")
+
     print(f"Wrote: {args.output}")
     print(f"Draws: {len(w)},  ESS ≈ {ess:.1f}  (ESS/N ≈ {ess/len(w):.3f})")
 
-
+    # ESS is useful to know whether your likelihood is too sharp:
+    # ESS/N ≈ 1 → very flat posterior (weights uniform)
+    # ESS/N ≪ 1 → very peaked posterior (you may need MCMC rather than pure sampling)
+    
 if __name__ == "__main__":
     main()
