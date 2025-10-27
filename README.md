@@ -1,5 +1,9 @@
 # CharmingFit — UTfit-style Bayesian analysis for charmless two-body B decays
 
+<p align="center">
+  <img src="logo/logo_white.png" width="750" alt="CharmingFit Logo">
+</p>
+
 This package performs a Bayesian (Monte Carlo importance-sampling) fit of
 charmless two-body decays of B+, B0, and Bs mesons into ππ, Kπ, and KK final states.
 
