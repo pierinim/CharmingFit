@@ -112,8 +112,17 @@ def br_from_amp(A, meson, N_B0=1.0, N_Bp=1.0, N_Bs=1.0):
     return N * abs(A)**2
 
 
-def direct_acp(A, Abar):
-    return (abs(Abar)**2 - abs(A)**2) / (abs(Abar)**2 + abs(A)**2)
+def direct_acp(A, Abar, eps=1e-16):
+    """
+    Compute direct CP asymmetry safely.
+    Returns 0.0 when both amplitudes are too small.
+    """
+    aa = abs(A)**2
+    bb = abs(Abar)**2
+    denom = aa + bb
+    if denom < eps:
+        return 0.0
+    return (bb - aa) / denom
 
 
 def q_over_p(meson, beta, beta_s):
