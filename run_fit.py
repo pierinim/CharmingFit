@@ -173,8 +173,8 @@ def predict_all(theta, obs_rows, mode_map):
 def main():
     ap = argparse.ArgumentParser(description="CharmingFit Bayesian sampling for charmless B decays")
     ap.add_argument("--config", default="config", help="Base directory for all YAML configs")
-    ap.add_argument("--out", default="CharmingFit.root", help="Output ROOT file")
-    ap.add_argument("-N", type=int, default=200000, help="Number of random draws")
+    ap.add_argument("--output", default="CharmingFit.root", help="Output ROOT file")
+    ap.add_argument("--nevents", type=int, default=200000, help="Number of random draws")
     ap.add_argument("--seed", type=int, default=12345)
     args = ap.parse_args()
 
@@ -194,7 +194,7 @@ def main():
 
     N_B0 = N_Bp = N_Bs = 1.0
 
-    for _ in range(args.N):
+    for _ in range(args.nevents):
         ckm = draw_ckm(ckm_priors)
         had = draw_hadronic_scaled(abs(ckm["lam_u_d"]), had_priors)
         piF, kap, rhoF, sig = draw_su3_breaking(su3_priors)
@@ -224,11 +224,11 @@ def main():
         for k, name in pred_names.items():
             buf[name].append(pred.get(k, float("nan")))
 
-    write_root(args.out, buf)
+    write_root(args.output, buf)
 
     w = np.array(buf["weight"])
     ess = (w.sum()**2) / (w*w).sum()
-    print(f"Wrote: {args.out}")
+    print(f"Wrote: {args.output}")
     print(f"Draws: {len(w)},  ESS ≈ {ess:.1f}  (ESS/N ≈ {ess/len(w):.3f})")
 
 
