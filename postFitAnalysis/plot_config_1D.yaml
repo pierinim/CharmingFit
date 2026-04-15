@@ -1,0 +1,93 @@
+CKM:
+  - { variable: gamma,   name: h_gamma,   xtitle: "#gamma [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: 0, xmax: 180 }
+  - { variable: beta,    name: h_beta,    xtitle: "#beta [deg]",   ytitle: "Weighted entries", nbins: 60, xmin: 0, xmax: 60 }
+  - { variable: beta_s,  name: h_beta_s,  xtitle: "#beta_{s} [deg]", ytitle: "Weighted entries", nbins: 60, xmin: -10, xmax: 10 }
+
+Observables:
+  # All predicted BR, ACP and S observables for the current fit.
+  # Ranges are calibrated to the current Kπ run and should capture the posterior support.
+  - { variable: pred__B0_K0K0bar__BR, name: h_pred__B0_K0K0bar__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow K^{0}#bar K^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__B0_K0K0bar__ACP, name: h_pred__B0_K0K0bar__ACP, xtitle: "A_{CP}(B^{0}#rightarrow K^{0}#bar K^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_K0K0bar__S, name: h_pred__B0_K0K0bar__S, xtitle: "S(B^{0}#rightarrow K^{0}#bar K^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_K0pi0__BR, name: h_pred__B0_K0pi0__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow K^{0}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 20 }
+  - { variable: pred__B0_K0pi0__ACP, name: h_pred__B0_K0pi0__ACP, xtitle: "A_{CP}(B^{0}#rightarrow K^{0}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_K0pi0__S, name: h_pred__B0_K0pi0__S, xtitle: "S(B^{0}#rightarrow K^{0}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_KpKm__BR, name: h_pred__B0_KpKm__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow K^{+}K^{-})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__B0_Kppim__BR, name: h_pred__B0_Kppim__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow K^{+}#pi^{-})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 50 }
+  - { variable: pred__B0_Kppim__ACP, name: h_pred__B0_Kppim__ACP, xtitle: "A_{CP}(B^{0}#rightarrow K^{+}#pi^{-})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_pi0pi0__BR, name: h_pred__B0_pi0pi0__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow #pi^{0}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__B0_pi0pi0__ACP, name: h_pred__B0_pi0pi0__ACP, xtitle: "A_{CP}(B^{0}#rightarrow #pi^{0}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_pippim__BR, name: h_pred__B0_pippim__BR, xtitle: "BR #times 10^{6} (B^{0}#rightarrow #pi^{+}#pi^{-})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__B0_pippim__ACP, name: h_pred__B0_pippim__ACP, xtitle: "A_{CP}(B^{0}#rightarrow #pi^{+}#pi^{-})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__B0_pippim__S, name: h_pred__B0_pippim__S, xtitle: "S(B^{0}#rightarrow #pi^{+}#pi^{-})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bp_K0Kp__BR, name: h_pred__Bp_K0Kp__BR, xtitle: "BR #times 10^{6} (B^{+}#rightarrow K^{0}K^{+})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__Bp_K0Kp__ACP, name: h_pred__Bp_K0Kp__ACP, xtitle: "A_{CP}(B^{+}#rightarrow K^{0}K^{+})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bp_K0barpip__BR, name: h_pred__Bp_K0barpip__BR, xtitle: "BR #times 10^{6} (B^{+}#rightarrow #bar K^{0}#pi^{+})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 50 }
+  - { variable: pred__Bp_K0barpip__ACP, name: h_pred__Bp_K0barpip__ACP, xtitle: "A_{CP}(B^{+}#rightarrow #bar K^{0}#pi^{+})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bp_Kppi0__BR, name: h_pred__Bp_Kppi0__BR, xtitle: "BR #times 10^{6} (B^{+}#rightarrow K^{+}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 30 }
+  - { variable: pred__Bp_Kppi0__ACP, name: h_pred__Bp_Kppi0__ACP, xtitle: "A_{CP}(B^{+}#rightarrow K^{+}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bp_pippi0__BR, name: h_pred__Bp_pippi0__BR, xtitle: "BR #times 10^{6} (B^{+}#rightarrow #pi^{+}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__Bp_pippi0__ACP, name: h_pred__Bp_pippi0__ACP, xtitle: "A_{CP}(B^{+}#rightarrow #pi^{+}#pi^{0})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bs_K0K0bar__BR, name: h_pred__Bs_K0K0bar__BR, xtitle: "BR #times 10^{6} (B_{s}#rightarrow K^{0}#bar K^{0})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 50 }
+  - { variable: pred__Bs_Kmpip__BR, name: h_pred__Bs_Kmpip__BR, xtitle: "BR #times 10^{6} (B_{s}#rightarrow K^{-}#pi^{+})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 10 }
+  - { variable: pred__Bs_Kmpip__ACP, name: h_pred__Bs_Kmpip__ACP, xtitle: "A_{CP}(B_{s}#rightarrow K^{-}#pi^{+})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bs_KpKm__BR, name: h_pred__Bs_KpKm__BR, xtitle: "BR #times 10^{6} (B_{s}#rightarrow K^{+}K^{-})", ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 50 }
+  - { variable: pred__Bs_KpKm__ACP, name: h_pred__Bs_KpKm__ACP, xtitle: "A_{CP}(B_{s}#rightarrow K^{+}K^{-})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+  - { variable: pred__Bs_KpKm__S, name: h_pred__Bs_KpKm__S, xtitle: "S(B_{s}#rightarrow K^{+}K^{-})", ytitle: "Weighted entries", nbins: 100, xmin: -1, xmax: 1 }
+
+Hadronic:
+  - { variable: T_abs,  name: h_T_abs,  xtitle: "|T|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: T_phase,  name: h_T_phase,  xtitle: "arg(T) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: C_abs,  name: h_C_abs,  xtitle: "|C|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: C_phase,  name: h_C_phase,  xtitle: "arg(C) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: E_abs,  name: h_E_abs,  xtitle: "|E|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: E_phase,  name: h_E_phase,  xtitle: "arg(E) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: A_abs,  name: h_A_abs,  xtitle: "|A|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: A_phase,  name: h_A_phase,  xtitle: "arg(A) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: P_abs,  name: h_P_abs,  xtitle: "|P|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: P_phase,  name: h_P_phase,  xtitle: "arg(P) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: PA_abs,  name: h_PA_abs,  xtitle: "|PA|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 5 }
+  - { variable: PA_phase,  name: h_PA_phase,  xtitle: "arg(PA) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+
+SU3:
+  # π terms
+  - { variable: pi_T_abs,  name: h_pi_T_abs,  xtitle: "|#pi_{T}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_T_phase,  name: h_pi_T_phase,  xtitle: "arg(#pi_{T}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: pi_C_abs,  name: h_pi_C_abs,  xtitle: "|#pi_{C}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_C_phase,  name: h_pi_C_phase,  xtitle: "arg(#pi_{C}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: pi_E_abs,  name: h_pi_E_abs,  xtitle: "|#pi_{E}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_E_phase,  name: h_pi_E_phase,  xtitle: "arg(#pi_{E}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: pi_A_abs,  name: h_pi_A_abs,  xtitle: "|#pi_{A}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_A_phase,  name: h_pi_A_phase,  xtitle: "arg(#pi_{A}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: pi_P_abs,  name: h_pi_P_abs,  xtitle: "|#pi_{P}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_P_phase,  name: h_pi_P_phase,  xtitle: "arg(#pi_{P}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: pi_PA_abs,  name: h_pi_PA_abs,  xtitle: "|#pi_{PA}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: pi_PA_phase,  name: h_pi_PA_phase,  xtitle: "arg(#pi_{PA}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+
+  # κ terms
+  - { variable: kappa_P_abs,  name: h_kappa_P_abs,  xtitle: "|#kappa_{P}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: kappa_P_phase,  name: h_kappa_P_phase,  xtitle: "arg(#kappa_{P}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: kappa_A_abs,  name: h_kappa_A_abs,  xtitle: "|#kappa_{A}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: kappa_A_phase,  name: h_kappa_A_phase,  xtitle: "arg(#kappa_{A}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: kappa_E_abs,  name: h_kappa_E_abs,  xtitle: "|#kappa_{E}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: kappa_E_phase,  name: h_kappa_E_phase,  xtitle: "arg(#kappa_{E}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: kappa_PA_abs,  name: h_kappa_PA_abs,  xtitle: "|#kappa_{PA}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: kappa_PA_phase,  name: h_kappa_PA_phase,  xtitle: "arg(#kappa_{PA}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+
+  # ρ terms
+  - { variable: rho_P_abs,  name: h_rho_P_abs,  xtitle: "|#rho_{P}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: rho_P_phase,  name: h_rho_P_phase,  xtitle: "arg(#rho_{P}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: rho_T_abs,  name: h_rho_T_abs,  xtitle: "|#rho_{T}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: rho_T_phase,  name: h_rho_T_phase,  xtitle: "arg(#rho_{T}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: rho_C_abs,  name: h_rho_C_abs,  xtitle: "|#rho_{C}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: rho_C_phase,  name: h_rho_C_phase,  xtitle: "arg(#rho_{C}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+
+  # σ terms
+  - { variable: sigma_T_abs,  name: h_sigma_T_abs,  xtitle: "|#sigma_{T}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: sigma_T_phase,  name: h_sigma_T_phase,  xtitle: "arg(#sigma_{T}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: sigma_E_abs,  name: h_sigma_E_abs,  xtitle: "|#sigma_{E}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: sigma_E_phase,  name: h_sigma_E_phase,  xtitle: "arg(#sigma_{E}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: sigma_P_abs,  name: h_sigma_P_abs,  xtitle: "|#sigma_{P}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: sigma_P_phase,  name: h_sigma_P_phase,  xtitle: "arg(#sigma_{P}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }
+  - { variable: sigma_PA_abs,  name: h_sigma_PA_abs,  xtitle: "|#sigma_{PA}|",  ytitle: "Weighted entries", nbins: 100, xmin: 0, xmax: 2 }
+  - { variable: sigma_PA_phase,  name: h_sigma_PA_phase,  xtitle: "arg(#sigma_{PA}) [deg]",  ytitle: "Weighted entries", nbins: 90, xmin: -180, xmax: 180 }

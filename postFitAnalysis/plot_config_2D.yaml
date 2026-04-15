@@ -1,0 +1,56 @@
+Hadronic:
+  - { variable: T_2D,  name: h2_T_abs_vs_phase,  xtitle: "|T|",  ytitle: "arg(T) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: C_2D,  name: h2_C_abs_vs_phase,  xtitle: "|C|",  ytitle: "arg(C) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: E_2D,  name: h2_E_abs_vs_phase,  xtitle: "|E|",  ytitle: "arg(E) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: A_2D,  name: h2_A_abs_vs_phase,  xtitle: "|A|",  ytitle: "arg(A) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: P_2D,  name: h2_P_abs_vs_phase,  xtitle: "|P|",  ytitle: "arg(P) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: PA_2D,  name: h2_PA_abs_vs_phase,  xtitle: "|PA|",  ytitle: "arg(PA) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 5, nbins_y: 90, ymin: -180, ymax: 180 }
+
+SU3:
+  # π terms
+  - { variable: pi_T_2D,  name: h2_pi_T_abs_vs_phase,  xtitle: "|#pi_{T}|",  ytitle: "arg(#pi_{T}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: pi_C_2D,  name: h2_pi_C_abs_vs_phase,  xtitle: "|#pi_{C}|",  ytitle: "arg(#pi_{C}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: pi_E_2D,  name: h2_pi_E_abs_vs_phase,  xtitle: "|#pi_{E}|",  ytitle: "arg(#pi_{E}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: pi_A_2D,  name: h2_pi_A_abs_vs_phase,  xtitle: "|#pi_{A}|",  ytitle: "arg(#pi_{A}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: pi_P_2D,  name: h2_pi_P_abs_vs_phase,  xtitle: "|#pi_{P}|",  ytitle: "arg(#pi_{P}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: pi_PA_2D,  name: h2_pi_PA_abs_vs_phase,  xtitle: "|#pi_{PA}|",  ytitle: "arg(#pi_{PA}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+
+  # κ terms
+  - { variable: kappa_P_2D,  name: h2_kappa_P_abs_vs_phase,  xtitle: "|#kappa_{P}|",  ytitle: "arg(#kappa_{P}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: kappa_A_2D,  name: h2_kappa_A_abs_vs_phase,  xtitle: "|#kappa_{A}|",  ytitle: "arg(#kappa_{A}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: kappa_E_2D,  name: h2_kappa_E_abs_vs_phase,  xtitle: "|#kappa_{E}|",  ytitle: "arg(#kappa_{E}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: kappa_PA_2D,  name: h2_kappa_PA_abs_vs_phase,  xtitle: "|#kappa_{PA}|",  ytitle: "arg(#kappa_{PA}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+
+  # ρ terms
+  - { variable: rho_P_2D,  name: h2_rho_P_abs_vs_phase,  xtitle: "|#rho_{P}|",  ytitle: "arg(#rho_{P}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: rho_T_2D,  name: h2_rho_T_abs_vs_phase,  xtitle: "|#rho_{T}|",  ytitle: "arg(#rho_{T}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: rho_C_2D,  name: h2_rho_C_abs_vs_phase,  xtitle: "|#rho_{C}|",  ytitle: "arg(#rho_{C}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+
+  # σ terms
+  - { variable: sigma_T_2D,  name: h2_sigma_T_abs_vs_phase,  xtitle: "|#sigma_{T}|",  ytitle: "arg(#sigma_{T}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: sigma_E_2D,  name: h2_sigma_E_abs_vs_phase,  xtitle: "|#sigma_{E}|",  ytitle: "arg(#sigma_{E}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: sigma_P_2D,  name: h2_sigma_P_abs_vs_phase,  xtitle: "|#sigma_{P}|",  ytitle: "arg(#sigma_{P}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }
+  - { variable: sigma_PA_2D,  name: h2_sigma_PA_abs_vs_phase,  xtitle: "|#sigma_{PA}|",  ytitle: "arg(#sigma_{PA}) [deg]",
+      nbins_x: 100, xmin: 0, xmax: 2, nbins_y: 90, ymin: -180, ymax: 180 }

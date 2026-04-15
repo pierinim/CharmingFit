@@ -1,8 +1,7 @@
 # Priors for hadronic topologies and SU(3) breaking
 
 hadronic:
-  # Reference scale: T0 = sqrt(BR(B0->pi+pi-)) / |λ_u^(d)|
-  # Each topology X is drawn as: |X| = T0 * U(min, max),  arg(X) ~ phase prior below.
+  # Each topology X is drawn as: |X| = U(min, max),  arg(X) ~ phase prior below.
   reference_phase: T   # fix arg(T)=0 to set the overall strong-phase convention
 
   magnitudes:
