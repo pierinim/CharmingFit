@@ -1,1 +1,7 @@
-python run_fit.py --observables data/observables.yaml -N 1000
+python run_fit.py \
+  --Bpipi \
+  --BKpi \
+  --BsKpi \
+  --BKK \
+  --BsKK \
+  --output CharmingFit_all_channels.root
